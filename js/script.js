@@ -16,7 +16,7 @@ var fieldLinks;
             {
               "name":"Columns in files",
               "list" : [
-                "first Name",
+                "first Name match the correct options",
                 "lastName",
                 "phone",
                 "email",
@@ -45,7 +45,7 @@ var fieldLinks;
 
         // show the correct answer
         let showSolution= [
-               {"from":"first Name","to":"pankaj"},
+               {"from":"first Name match the correct options","to":"pankaj"},
                {"from":"lastName","to":"kumar gouraw"},
                {"from":"phone","to":78787},
                {"from":"email","to":"pgouraw@gmail.com"}
@@ -88,6 +88,8 @@ var fieldLinks;
         // $("#output").html("output => " + JSON.stringify(results));
       });
       // end check function
+
+     $('.unlink').hide();
 
            
     });  // document ready function end here...

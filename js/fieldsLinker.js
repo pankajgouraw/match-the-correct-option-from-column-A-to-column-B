@@ -45,7 +45,7 @@ let FL_Factory_Lists = null;
 	    canvasCtx.globalAlpha = globalAlpha;
 		canvasCtx.beginPath();
 		canvasCtx.fillStyle = 'white';
-		canvasCtx.strokeStyle = lineColor;
+		canvasCtx.strokeStyle = 'white';
 		canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight);
 		var links = linksByName.filter(function(x){
 			return x.tables == tablesAB;
@@ -65,8 +65,8 @@ let FL_Factory_Lists = null;
 			canvasCtx.moveTo(Ax, Ay);
             var handleCurrentColor = handleColor[i % handleColor.length];
             if (lineStyle == "square-ends" || lineStyle == "square-ends-dotted") {
-                canvasCtx.fillStyle = handleCurrentColor;
-                canvasCtx.strokeStyle = handleCurrentColor;
+                canvasCtx.fillStyle = 'white';
+                canvasCtx.strokeStyle = 'white';
                 canvasCtx.rect(Ax, Ay - 4, 8, 8);
                 canvasCtx.rect(Bx - 8, By - 4, 8, 8);
                 canvasCtx.fill();
@@ -77,7 +77,7 @@ let FL_Factory_Lists = null;
                 canvasCtx.lineTo(Bx - 8, By);
                 canvasCtx.stroke();
             } else {
-                canvasCtx.strokeStyle = handleCurrentColor;
+                canvasCtx.strokeStyle = 'white';
                 canvasCtx.lineTo(Bx, By);
                 canvasCtx.stroke();
             }
@@ -483,7 +483,8 @@ var drawColumnsContentA = function(){
 			canvasCtx.beginPath();
 			var color= handleColor[_from%handleColor.length];
 			canvasCtx.fillStyle = 'white';
-			canvasCtx.strokeStyle = color;
+			// canvasCtx.strokeStyle = color;
+			canvasCtx.strokeStyle = 'white';
 			canvasCtx.moveTo(Ax, Ay);
 			canvasCtx.lineTo(Bx, By);
 			canvasCtx.stroke();
@@ -529,7 +530,8 @@ var drawImmediate=function(e){
 	var _from = move.offsetA;
 	var color= handleColor[_from%handleColor.length];
 	canvasCtx.fillStyle = 'white';
-	canvasCtx.strokeStyle = color;
+	// canvasCtx.strokeStyle = color;
+	canvasCtx.strokeStyle = "white";
 	var Ax = 0;
 	var Ay = ListHeights1[_from];
 	// mouse position relative to the canvas

@@ -1,5 +1,6 @@
 .fieldsLinker div {
     font-weight: bold;
+        white-space: initial;
 }
 
 .fieldsLinker ul {
