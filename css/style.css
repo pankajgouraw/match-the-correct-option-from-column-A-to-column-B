@@ -7,7 +7,13 @@ body{
 	background: radial-gradient(#4CAF50, #009688);
 	height: 100vh;
 }	
+#bonds{
+	margin-bottom:15px;
+}
 
+.fieldsLinker{
+	overflow: auto;
+}
 	#bonds .fieldsLinker  .FL-right  li{
         position: relative;
 	}
@@ -40,6 +46,23 @@ align-items: center;
 }
 #header {
 margin-bottom: 25px;
+}
+
+.navBtn button{
+	    padding: 4px 15px;
+    border: none;
+    margin: 5px;
+background-image: radial-gradient(#3dcd47,#1a1a1a);
+    color: #fff;
+    border-radius: 50px;
+}
+.navBtn{
+	text-align: center;
+}
+
+.navBtn button:focus {
+    outline: none;
+    border: 1px solid #fff;
 }
 
 @media screen and (max-width: 500px) {

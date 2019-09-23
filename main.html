@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Match field A to field B</title>
+    <title>Match fields A to B</title>
 	<!-- <link rel="icon" href="pi.ico" /> -->
 	<meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	
 	<link rel="stylesheet" href="css/fieldsLinker.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>
@@ -25,18 +26,22 @@
                <h3 class="">Match the correct options</h3>
             </div>
             <h4 id='instruction'></h4>
-         </div>
-		  <div id="bonds">
-		  </div>
-		  <button id='next'>Next</button>
+        </div>
+		<div id="bonds" class="animated slideInLeft">
+		</div>
+		<div class="navBtn animated slideInLeft">
+		  <button id='prev'>Prev</button>
 		  <button id='eraseLink'>Erase</button>
 		  <button id='solution'>Solution</button>
 		  <button id='submit'>Submit</button>
-		  <button id='prev'>Prev</button>
+		  <button id='next'>Next</button>
+
+		</div>
       </div>
 	
       <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
       <script src="js/jquery.js"></script>
+      <script src="data/data.js"></script>
 	  <script src="js/fieldsLinker.js"></script>
 	  <script src="js/script.js">  </script>
 	  <!-- <script src="js/enableDragMobile.js"></script> -->

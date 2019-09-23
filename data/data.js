@@ -12,25 +12,74 @@
 
 const data = [
 	{
-		'question' : ["a","l","l"],
-		'corrAns'  : 'b',
-		'audio'    : 'audio/aclip.mp3',
-		'img'      : 'img/ball.png'
+		'listA' :[
+	                "first Name",
+	                "lastName",
+	                "phone",
+	                "email"
+		        ],
+
+		'listB' :[
+	                "kumar gouraw",
+	                "pgouraw@gmail.com",
+	                "pankaj",
+	                78787 
+                ],
+
+        'answer' :[
+	               {"from":"first Name","to":"pankaj"},
+	               {"from":"lastName","to":"kumar gouraw"},
+	               {"from":"phone","to":78787},
+	               {"from":"email","to":"pgouraw@gmail.com"}
+                 ]	
 	},
+
 	{
-		'question' : ["a","t"],
-		'corrAns'  : 'b',
-		'audio'    : 'audio/aclip.mp3',
-		'img'      : 'img/bat.png'
+		'listA' :[
+	                "first Name2",
+	                "lastName",
+	                "phone",
+	                "email"
+		        ],
+
+		'listB' :[
+	                "kumar gouraw",
+	                "pgouraw@gmail.com",
+	                "pankaj",
+	                78787 
+                ],
+
+        'answer' :[
+	               {"from":"first Name2","to":"pankaj"},
+	               {"from":"lastName","to":"kumar gouraw"},
+	               {"from":"phone","to":78787},
+	               {"from":"email","to":"pgouraw@gmail.com"}
+                 ]	
 	},
-    {
-		'question' : ["a","l","l","o","o","n"],
-		'corrAns'  : 'b',
-		'audio'    : 'audio/aclip.mp3',
-		'img'      : 'img/ball.png'
+
+	{
+		'listA' :[
+	                "first Name3",
+	                "lastName",
+	                "phone",
+	                "email"
+		        ],
+
+		'listB' :[
+	                "kumar gouraw",
+	                "pgouraw@gmail.com",
+	                "pankaj",
+	                78787 
+                ],
+
+        'answer' :[
+	               {"from":"first Name3","to":"pankaj"},
+	               {"from":"lastName","to":"kumar gouraw"},
+	               {"from":"phone","to":78787},
+	               {"from":"email","to":"pgouraw@gmail.com"}
+                 ]	
 	}
-
-
+	
 ];
 
 

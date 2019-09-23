@@ -1,96 +1,129 @@
 var fieldLinks;
-    $( document ).ready(function() {
-      //var existingLinks = [{"from":"firstName","to":"first_name"}] ;
-      // var input;
-      // var existingLinks;
-      // function getLinks(){
-      var input = {
-          "localization":{
-        },
-          "options":{
-          "associationMode":"oneToOne", // oneToOne,manyToMany
-          "lineStyle":"square-ends",
-          // "buttonErase":"Erase Links",
-        },
-          "Lists":[
-            {
-              "name":"Columns in files",
-              "list" : [
-                "first Name match the correct options",
-                "lastName",
-                "phone",
-                "email",
-              ]
-            },
-            {
-              "name":"Available Fields",
-              "list" : [
-                "kumar gouraw",
-                "pgouraw@gmail.com",
-                "pankaj",
-                78787 
-              ],
-              // "mandatories" :[
-              //   "last_name",
-              //   "email_adress"
-              // ]
-            }
-            ],
+$(document).ready(function() {
+ let index = 0;
 
-          "existingLinks" : []
-      };
-      // }
-      
-        fieldLinks=$("#bonds").fieldsLinker("init",input);
+ // url value
+ let url = window.location.href;
+ if (url.indexOf('?') > 0) {
+  let params = new URLSearchParams(url.substring(1));
+  index = parseInt(params.get('qno'));
+  console.log("url variable available....");
+ } else {
+  console.log("url variable not available...");
+ }
 
-        // show the correct answer
-        let showSolution= [
-               {"from":"first Name match the correct options","to":"pankaj"},
-               {"from":"lastName","to":"kumar gouraw"},
-               {"from":"phone","to":78787},
-               {"from":"email","to":"pgouraw@gmail.com"}
-          ];
 
-        $('#solution').click(function(){
-           input.existingLinks = showSolution;
-           fieldLinks=$("#bonds").fieldsLinker("init",input);
-        });
-       
-      let liId;
-      
-      // check function
-      $("#submit").on("click",function(){
-        $('.signImg').remove() // remove the right wrong icon
-        // get user match option value
-        var results = fieldLinks.fieldsLinker("getLinks");
-        let userTo = results.links;
- 
-        // check user did right or wrong
-        $.each(userTo, function(i){
-            $.each(showSolution,function(j){
-                 if(userTo[i].from == showSolution[j].from)  {
-                  console.log(userTo[i].from,  showSolution[j].from)
-                      if(userTo[i].to == showSolution[j].to){
-                        console.log(userTo[i].to,  showSolution[j].to)
-                         liId = $(`#bonds .fieldsLinker .FL-right li[data-name='${userTo[i].to}']`);
-                         $(liId[0]).css({'padding-left':'35px'});
-                         $(liId[0]).prepend(`<img src='img/right.png' class='signImg right' />`);
-                         console.log(liId[0]);
-                      }else{
-                         liId = $(`#bonds .fieldsLinker .FL-right li[data-name='${userTo[i].to}']`);
-                         $(liId[0]).css({'padding-left':'35px'});
-                         $(liId[0]).prepend(`<img src='img/wrong.png' class='signImg wrong' />`);
-                      }
-                 }
-            });
-        })
-        // check user did right or wrong end here
-        // $("#output").html("output => " + JSON.stringify(results));
+ var input = {
+  "localization": {},
+  "options": {
+   "associationMode": "oneToOne", // oneToOne,manyToMany
+   "lineStyle": "square-ends",
+   // "buttonErase":"Erase Links",
+  },
+  "Lists": [{
+    "name": "Columns in files",
+    "list": data[index].listA,
+   },
+   {
+    "name": "Available Fields",
+    "list": data[index].listB,
+   }
+  ],
+
+  "existingLinks": []
+ };
+ // }
+
+ fieldLinks = $("#bonds").fieldsLinker("init", input);
+
+ // show the correct answer
+ let showSolution = data[index].answer;
+
+ $('#solution').click(function() {
+  input.existingLinks = showSolution;
+  fieldLinks = $("#bonds").fieldsLinker("init", input);
+  $('#select1').css({
+   'opacity': 0
+  });
+  $('#select2').css({
+   'opacity': 0
+  });
+
+ });
+
+ let liId;
+
+ // check function
+ $("#submit").on("click", function() {
+  $('.signImg').remove() // remove the right wrong icon
+  // get user match option value
+  var results = fieldLinks.fieldsLinker("getLinks");
+  let userTo = results.links;
+
+  // check user did right or wrong
+  $.each(userTo, function(i) {
+   $.each(showSolution, function(j) {
+    if (userTo[i].from == showSolution[j].from) {
+     if (userTo[i].to == showSolution[j].to) {
+      liId = $(`#bonds .fieldsLinker .FL-right li[data-name='${userTo[i].to}']`);
+      $(liId[0]).css({
+       'padding-left': '35px'
       });
-      // end check function
+      $(liId[0]).prepend(`<img src='img/right.png' class='signImg right' />`);
+     } else {
+      liId = $(`#bonds .fieldsLinker .FL-right li[data-name='${userTo[i].to}']`);
+      $(liId[0]).css({
+       'padding-left': '35px'
+      });
+      $(liId[0]).prepend(`<img src='img/wrong.png' class='signImg wrong' />`);
+     }
+    }
+   });
+  })
+  // check user did right or wrong end here
+  // $("#output").html("output => " + JSON.stringify(results));
+ });
+ // end check function
 
-     $('.unlink').hide();
+ $('.unlink').hide();
+ $('#select1').css({
+  'opacity': 0
+ });
+ $('#select2').css({
+  'opacity': 0
+ });
 
-           
-    });  // document ready function end here...
- 
+
+ $('#next').click(function() {
+
+  index++;
+  let url2 = window.location.pathname;
+  var newurl = url2 + `?data=all&qno=${index}`;
+  window.location.href = newurl;
+
+ });
+
+
+ $('#prev').click(function() {
+
+  index--;
+  let url2 = window.location.pathname;
+  var newurl = url2 + `?data=all&qno=${index}`;
+  window.location.href = newurl;
+
+ });
+
+ if (index > 0) {
+  $('#prev').fadeIn();
+  $('#next').fadeIn();
+  } else {
+  $('#prev').hide();
+  }
+
+ if (index == data.length - 1) {
+  $('#next').hide();
+ }
+
+
+
+}); // document ready function end here...
