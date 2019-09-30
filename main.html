@@ -18,33 +18,33 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>
-  <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
-  <!-- <body> -->
+  <!-- <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;"> -->
+  <body>
 	  <div class="mainContainer">  
 	  	<div id="header">
             <div class="logo">
                <a href="main.html"> <img src="img/logo.png"> </a>
-               <h3 class="headerText">Match the correct options</h3>
+               <h3 class="headerText"></h3>
             </div>
-            <h4 id='instruction'></h4>
         </div>
 		<div id="bonds" class="animated slideInLeft">
 		</div>
 		<div class="navBtn animated slideInLeft">
-		  <button id='prev'>Prev</button>
-		  <button id='eraseLink'>Erase</button>
-		  <button id='solution'>Solution</button>
-		  <button id='submit'>Submit</button>
-		  <button id='next'>Next</button>
-
+		  <button id='prev'><img src='img/next.png' /></button>
+		  <button id='eraseLink'>Reset</button>
+		  <!-- <button id='solution'>Answer</button> -->
+		  <button id='submit'>Check</button>
+		  <button id='next'><img src='img/prev.png' /></button>
 		</div>
       </div>
-	
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
       <script src="js/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
       <script src="data/data.js"></script>
 	  <script src="js/fieldsLinker.js"></script>
 	  <script src="js/script.js">  </script>
+
+	</body>
 	  <!-- <script src="js/enableDragMobile.js"></script> -->
 
 </html>

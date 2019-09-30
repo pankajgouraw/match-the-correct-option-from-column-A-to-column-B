@@ -34,7 +34,7 @@ body{
 #header .logo h3 {
 flex-grow: 1;
 text-align: right;
-font-family: cursive;
+font-family: sans-serif;
 font-size: 28px;
 color: #fff;
 margin-top:0px;
@@ -65,6 +65,16 @@ background-image: radial-gradient(#3dcd47,#1a1a1a);
     border: 1px solid #fff;
 }
 
+#next{background:none; float:right;}
+#prev{background:none; float:left;}
+#next img{    width: 40px;
+    margin-top: -10px;}
+#prev img{    width: 40px;
+    margin-top: -10px;}
+.navBtn button#prev:focus, .navBtn button#next:focus{
+    outline: none;
+    border: none;
+}
 @media screen and (max-width: 500px) {
 .dropSuggestions{flex-wrap:wrap;}
 #header .logo  img{width:100px;}
